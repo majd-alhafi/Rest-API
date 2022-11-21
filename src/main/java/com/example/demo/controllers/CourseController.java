@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.DTO.DepartmentCourseDTO;
 import com.example.demo.models.Course;
 import com.example.demo.services.CourseServices;
 
@@ -23,6 +24,11 @@ public class CourseController {
 	@GetMapping("/courses")
 	public List<Course> getAllCourses() {
 		return courseServices.getAllCourses();
+	}
+	
+	@GetMapping("/courses-department")
+	public List<DepartmentCourseDTO> getAllCoursesDepartment() {
+		return courseServices.getAllCoursesDepartment();
 	}
 	
 	@GetMapping("/department/{id}/courses")
